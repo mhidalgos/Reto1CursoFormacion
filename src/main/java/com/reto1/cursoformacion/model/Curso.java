@@ -1,7 +1,10 @@
 package com.reto1.cursoformacion.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -21,8 +24,10 @@ public class Curso {
 	private String nombre;
 	private int horas; 
 	private String info;
-	private Date fecha_inicio;
-	private Date fecha_fin;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate fecha_inicio;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate fecha_fin;
 	
 	
 	@OneToMany(mappedBy = "curso", cascade = CascadeType.ALL)
@@ -32,7 +37,7 @@ public class Curso {
 		
 	}
 	
-	public Curso(Integer id, String nombre, int horas, String info, Date fecha_inicio, Date fecha_fin) {
+	public Curso(Integer id, String nombre, int horas, String info, LocalDate fecha_inicio, LocalDate fecha_fin) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -65,16 +70,16 @@ public class Curso {
 	public void setInfo(String info) {
 		this.info = info;
 	}
-	public Date getFecha_inicio() {
+	public LocalDate getFecha_inicio() {
 		return fecha_inicio;
 	}
-	public void setFecha_inicio(Date fecha_inicio) {
+	public void setFecha_inicio(LocalDate fecha_inicio) {
 		this.fecha_inicio = fecha_inicio;
 	}
-	public Date getFecha_fin() {
+	public LocalDate getFecha_fin() {
 		return fecha_fin;
 	}
-	public void setFecha_fin(Date fecha_fin) {
+	public void setFecha_fin(LocalDate fecha_fin) {
 		this.fecha_fin = fecha_fin;
 	}
 

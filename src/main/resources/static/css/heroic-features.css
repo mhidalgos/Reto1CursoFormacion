@@ -6,3 +6,17 @@
 body {
   padding-top: 56px;
 }
+
+/* Sobrescribir la clase bg-dark */
+ .bg-dark {
+	background-color: #004085 !important;
+}
+.btn-outline-success{
+	color: rgb(255, 255, 255);
+	border-color: rgb(255, 255, 255);
+}
+.btn-success {
+	    color: #fff;
+	    background-color: #004085;
+	    border-color: #004085;
+}

@@ -1,5 +1,6 @@
 package com.reto1.cursoformacion.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,4 +35,8 @@ public class CursoServiceImpl implements CursoService {
 		cursoDAO.deleteById(id);
 	}
 
+	@Override
+	public List<Curso> findAll(){
+		return cursoDAO.findAll();
+	}
 }
