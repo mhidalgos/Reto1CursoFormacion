@@ -39,4 +39,8 @@ public class CursoServiceImpl implements CursoService {
 	public List<Curso> findAll(){
 		return cursoDAO.findAll();
 	}
+	public List<Curso> findByNombre(String nombre) {
+	    return cursoDAO.findByNombreContainingIgnoreCase(nombre);
+	}
+
 }
